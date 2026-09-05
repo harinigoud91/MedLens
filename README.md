@@ -39,3 +39,20 @@ The current MVP primarily supports text-based PDFs. Scanned/image-only PDFs are 
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+## Challenge Coverage
+
+| Challenge Requirement | MedLens Implementation |
+|---|---|
+| Patient context | Name, Age, Sex and Symptoms fields |
+| Medical report upload | PDF upload with format validation |
+| AI extraction and summary | Gemini-powered clinical information pipeline |
+| Structured clinical record | Test, Result, Unit, Reference Range, Status, Source and Confidence |
+| Medical terminology explanation | Plain-language AI-generated explanation |
+| Provenance | Source page and verbatim evidence snippet |
+| Avoid invented values | Strict extraction rules and deterministic evidence matching |
+| Responsible AI | No diagnosis, prescriptions or dosage recommendations |
+| AI transparency | AI-generated information is clearly labeled |
+
+### Accessibility
+
+MedLens uses clear section headings, descriptive field labels, help text, status messages, captions, visible safety notices and readable structured tables to make the workflow easier to understand and review.
