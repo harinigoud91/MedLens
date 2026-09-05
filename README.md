@@ -1,72 +1,41 @@
 # MedLens 🩺
 
-MedLens is an AI-powered medical report assistant designed to help patients and everyday users understand complex medical reports, lab results, and health documents by translating medical jargon into clear, accessible explanations.
+## Evidence-First AI Medical Report Intelligence
 
-> **Status:** 🚧 Foundation Stage  
-> The project foundation and environment configuration are established. Core features (document processing, Gemini AI integration, and user interface workflows) will be built in upcoming stages.
+MedLens is a Gemini-powered medical report intelligence tool that converts complex medical PDF reports into a structured, readable clinical record.
 
----
+### Key Features
 
-## Project Structure
+- PDF medical report upload and text extraction
+- Gemini-powered report analysis and summarization
+- Patient context: Name, Age, Sex and Symptoms
+- Structured clinical record with Test, Result, Unit, Reference Range, Status, Source and Confidence
+- Evidence Lens with source-page and evidence-snippet provenance
+- Plain-language medical terminology explanations
+- Responsible AI guardrails
+- No diagnosis, prescriptions or dosage recommendations
+- Synthetic demo report for safe demonstration
 
-```text
-MedLens/
-├── app.py              # Streamlit application entry point (placeholder)
-├── requirements.txt    # Essential dependencies for the planned MVP
-├── README.md           # Project documentation and setup guide
-├── .gitignore          # Rules to exclude sensitive files, caches, and environments
-└── .env.example        # Template for environment variables (API keys)
-```
+### Technology
 
----
+Python • Streamlit • Google Gemini • PyMuPDF
 
-## Planned MVP Features
+### How It Works
 
-- **Document Ingestion:** Upload PDF reports and image scans.
-- **AI Simplification:** Gemini-powered translation of technical medical terminology into plain language.
-- **Key Findings Extraction:** Clear summary of critical metrics and doctor consultation talking points.
-- **Interactive Q&A:** Safe, conversational follow-up questions for report clarification.
+Medical PDF → PyMuPDF extraction → Gemini analysis → Structured clinical record → Evidence matching → Plain-language explanation
 
----
+### Responsible AI
 
-## Getting Started
+MedLens is an information and report-understanding tool, not a diagnostic system. AI-generated information is clearly labeled, and extracted values are connected to report evidence where available.
 
-### 1. Prerequisites
-- Python 3.10+
-- Git
+The application does not provide diagnoses, prescriptions, or dosage recommendations.
 
-### 2. Setup Virtual Environment (Recommended)
+### Limitation
+
+The current MVP primarily supports text-based PDFs. Scanned/image-only PDFs are detected, but OCR is not currently implemented.
+
+### Run Locally
+
 ```bash
-python -m venv venv
-```
-
-Activate the environment:
-- **Windows (PowerShell):**
-  ```powershell
-  .\venv\Scripts\Activate.ps1
-  ```
-- **Windows (Command Prompt):**
-  ```cmd
-  venv\Scripts\activate.bat
-  ```
-- **macOS / Linux:**
-  ```bash
-  source venv/bin/activate
-  ```
-
-### 3. Install Dependencies
-```bash
-python -m pip install -r requirements.txt
-```
-
-### 4. Configure Environment Variables
-Copy `.env.example` to `.env`:
-```bash
-copy .env.example .env
-```
-Add your Google Gemini API key inside `.env`.
-
-### 5. Run the Application
-```bash
+pip install -r requirements.txt
 streamlit run app.py
-```
