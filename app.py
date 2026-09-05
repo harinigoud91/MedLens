@@ -515,7 +515,7 @@ Respond ONLY with a JSON object in this EXACT structure:
 }}
 """
 
-    models_to_try = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+    models_to_try = ["gemini-3.6-flash"]
     last_error = None
 
     for model_name in models_to_try:
@@ -771,7 +771,7 @@ def render_report_uploader():
         analyze_clicked = st.button(
             "🔍 Analyze Report & Verify Evidence",
             type="primary",
-            use_container_width=True,
+            width="stretch",
             help="Extract clinical measurements and trace all evidence back to source pages."
         )
 
@@ -1033,3 +1033,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
